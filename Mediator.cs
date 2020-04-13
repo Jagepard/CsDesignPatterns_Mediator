@@ -35,7 +35,13 @@ namespace CsDesignPatterns_Mediator
             Listener listener = Listeners[name];
             string methodName = Events[name];
 
-            listener.GetType().GetMethod(methodName).Invoke(listener, null);
+            if (handler == null)
+            {
+                listener.GetType().GetMethod(methodName).Invoke(obj: listener, parameters: null);
+                return;
+            }
+
+            listener.GetType().GetMethod(methodName).Invoke(obj: listener, parameters: new object[] { handler });
         }
     }
 }

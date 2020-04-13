@@ -9,9 +9,10 @@ namespace CsDesignPatterns_Mediator
 {
     class Colleague2 : Listener
     {
-        public void OnEvent()
+        public void OnEvent(Handler handler)
         {
-            Console.WriteLine("Colleague2: reacts on notify");
+            handler.Message = "Colleague2";
+            Console.WriteLine("{0}: reacts on notify", handler.Message);
         }
     }
 }
