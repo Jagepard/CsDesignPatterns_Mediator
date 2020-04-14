@@ -7,7 +7,7 @@ using System;
 
 namespace CsDesignPatterns_Mediator
 {
-    class Colleague2 : Listener
+    class Colleague2 : IListener
     {
         public void OnEvent(Handler handler)
         {

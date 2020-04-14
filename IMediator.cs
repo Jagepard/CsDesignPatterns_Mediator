@@ -9,7 +9,7 @@ namespace CsDesignPatterns_Mediator
 {
     interface IMediator
     {
-        void AddListener(string name, Listener listeneer, string methodName);
+        void AddListener(string name, IListener listeneer, string methodName);
         void Notify(string name, IHandler handler);
     }
 }
