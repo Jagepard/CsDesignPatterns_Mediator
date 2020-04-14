@@ -11,10 +11,10 @@ namespace CsDesignPatterns_Mediator
 {
     class Mediator : IMediator
     {
-        public IDictionary<string, Listener> Listeners { get; } = new Dictionary<string, Listener>();
+        public IDictionary<string, IListener> Listeners { get; } = new Dictionary<string, IListener>();
         public IDictionary<string, string> Events { get; } = new Dictionary<string, string>();
 
-        public void AddListener(string name, Listener listeneer, string methodName)
+        public void AddListener(string name, IListener listeneer, string methodName)
         {
             if (Listeners.ContainsKey(name) && Events.ContainsKey(name))
             {
@@ -32,7 +32,7 @@ namespace CsDesignPatterns_Mediator
                 throw new Exception(name + " does not exist in the Dictionary");
             }
 
-            Listener listener = Listeners[name];
+            IListener listener = Listeners[name];
             string methodName = Events[name];
 
             if (handler == null)

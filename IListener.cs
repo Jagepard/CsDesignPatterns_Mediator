@@ -5,7 +5,7 @@
 
 namespace CsDesignPatterns_Mediator
 {
-    class Listener
+    interface IListener
     {
     }
 }

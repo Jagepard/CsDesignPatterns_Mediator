@@ -28,6 +28,6 @@ namespace CsDesignPatterns_Mediator
             {
                 Console.WriteLine("Caught exception: {0} \n", e.Message);
             }
-}
+        }
     }
 }

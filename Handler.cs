@@ -7,12 +7,6 @@ namespace CsDesignPatterns_Mediator
 {
     internal class Handler : IHandler
     {
-        private string _message;
-
-        public string Message
-        {
-            get { return _message; }
-            set { _message = value; }
-        }
+        public string Message { get; set; }
     }
 }
